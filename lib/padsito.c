@@ -6,7 +6,7 @@ int main(void) {
     while (1) {
         char key = padsito_getkey();
         if (key) {
-            
+            //auratalk
         }
     }
 }
