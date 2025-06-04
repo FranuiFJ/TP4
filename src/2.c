@@ -14,7 +14,7 @@ int a=0, i, j;
 int strcmp(const char *str1, const char *str2);
 char contdf[8]={'D','1','0','8','3','0','3'};
 char contrar[8];
-char contranew [8];
+char nwpass [8];
 char car; 
 bool hash;
 bool cambio;
@@ -25,16 +25,16 @@ int main(void) {
         car= _MATRIZ_US(c0, c1, c2, c3, f0, f1, f2, f3); 
         if(cambio){
           if (car=='#'){
-            contranew[a]=car;
+            nwpass[a]=car;
             a++;
 
               if (a==8){
                 contrar[8]='\0';
-                strcpy(contdf,contranew);
+                strcpy(contdf,nwpass);
                 cambio=false;
 
               }
-              memset(contranew, 0, sizeof(contranew));
+              memset(nwpass, 0, sizeof(nwpass));
             a=0;
 
           }
