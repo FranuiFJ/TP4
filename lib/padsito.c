@@ -1,12 +1,13 @@
 #include "padsito.h"
+#include "stm32f103xb.h"
+#include <string.h>
 
 int main(void) {
-    padsito_init();
-
-    while (1) {
-        char key = padsito_getkey();
-        if (key) {
-            //auratalk
+    TecladoMatri_init();
+        while (1) {
+            char tecla = TecladoMatri();
+            if (tecla) {
+                
+            }
         }
-    }
 }
