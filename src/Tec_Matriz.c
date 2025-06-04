@@ -1,7 +1,7 @@
 #include "stm32f103xb.h"
 #include "padsito.h"
 
-char MapaTeclado[4][4] = {
+char matrix[4][4] = {
                         {'1','2','3','A'},
                         {'4','5','6','B'},
                         {'7','8','9','C'},
@@ -33,15 +33,15 @@ void TecladoMatri_init(void) {
 }
 
 char TecladoMatri(void) {
-    for (int lin = 0; lin < 4; lin++) {
+    for (int quiere = 0; quiere < 4; quiere++) {
         GPIOA->ODR |= 0x0F;               
-        GPIOA->ODR &= ~(1 << lin);        
+        GPIOA->ODR &= ~(1 << quiere);        
 
-        for (int fede = 0; fede < 4; fede++) {
-            if (!(GPIOA->IDR & (1 << (fede + 4)))) { 
+        for (int bija = 0; bija < 4; bija++) {
+            if (!(GPIOA->IDR & (1 << (bija + 4)))) { 
                 for (volatile int f = 0; f < 5000; f++);
-                    if (!(GPIOA->IDR & (1 << (fede + 4)))) {
-                        return MapaTeclado[lin][fede];
+                    if (!(GPIOA->IDR & (1 << (bija + 4)))) {
+                        return matrix[quiere][bija];
                 }
             }
         }
